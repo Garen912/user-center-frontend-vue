@@ -1,22 +1,12 @@
-import { getCurrentUser } from '@/api/user'
 import { Commit } from 'vuex'
-import User from './user'
-
-// 远程获取登录用户信息
-async function fetchLoginUser() {
-  const res = await getCurrentUser()
-  if (res.data.code === 0 && res.data.data) {
-    return res.data.data
-  }
-  return null
-}
+import { fetchLoginUser } from '@/utils/user'
 
 const state = {
   username: '未登录',
 }
 
 const mutations = {
-  SET_LOGIN_USER: (state: User, username: string) => {
+  SET_LOGIN_USER: (state: { [key: string]: string }, username: string) => {
     state.username = username
   },
 }
@@ -31,7 +21,7 @@ const actions = {
 }
 
 export default {
-  namespace: true,
+  namespaced: true,
   state,
   mutations,
   actions,
