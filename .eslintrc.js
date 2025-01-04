@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'prettier/prettier': 'warn', // 将 Prettier 错误设置为警告
     indent: ['error', 2], // 使用2个空格进行缩进
     semi: ['error', 'never'], // 不需要分号结尾
   },
