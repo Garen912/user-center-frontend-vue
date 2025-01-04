@@ -5,5 +5,9 @@ module.exports = defineConfig({
     resolve: {
       extensions: ['.js', '.vue', '.json'], // 添加 .vue 后缀
     },
+    devtool: 'source-map', // 使用 source-map
+    devServer: {
+      port: 3300,
+    },
   },
 })
