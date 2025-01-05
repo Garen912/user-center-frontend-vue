@@ -1,5 +1,5 @@
 <template>
-  <div id="basic-layout">
+  <div id="basicLayout">
     <a-layout>
       <a-layout-header class="header">
         <GlobalHeader />
@@ -21,21 +21,21 @@ import GlobalHeader from '@/components/GlobalHeader.vue'
 </script>
 
 <style scoped>
-#basic-layout .header {
+#basicLayout .header {
   background: #fff;
   padding-inline: 20px;
   margin-bottom: 16px;
   color: unset;
 }
 
-#basic-layout .content {
+#basicLayout .content {
   background: #fff;
   padding: 20px;
   margin-bottom: 20px;
   color: unset;
 }
 
-#basic-layout .footer {
+#basicLayout .footer {
   background: #efefef;
   text-align: center;
   position: fixed;

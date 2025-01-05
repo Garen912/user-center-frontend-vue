@@ -1,12 +1,15 @@
 import { Commit } from 'vuex'
 import { fetchLoginUser } from '@/utils/user'
 
-const state = { 
+const state = {
   username: '未登录',
 }
 
 const mutations = {
-  SET_LOGIN_USER: (state: { [key: string]: string }, loginUser: { [key: string]: string }) => {
+  SET_LOGIN_USER: (
+    state: { [key: string]: string },
+    loginUser: { [key: string]: string }
+  ) => {
     Object.assign(state, loginUser)
   },
 }
