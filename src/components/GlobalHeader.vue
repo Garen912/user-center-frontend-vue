@@ -30,14 +30,14 @@
 </template>
 
 <script lang="ts" setup>
-import { h, ref, computed, onMounted } from 'vue'
+import { h, ref } from 'vue'
 import { CrownOutlined, HomeOutlined } from '@ant-design/icons-vue'
 import { MenuProps } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
 const store = useStore()
-const loginUser = computed(() => store.getters.username)
+const loginUser = store.state.user
 
 const router = useRouter()
 // 点击菜单后的路由跳转事件
