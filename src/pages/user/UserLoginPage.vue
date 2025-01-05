@@ -45,7 +45,7 @@ import { reactive } from 'vue'
 import { userLogin } from '@/api/user'
 import { message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
-import { fetchLoginUser } from '@/utils/user'
+import { useStore } from 'vuex'
 
 interface FormState {
   userAccount: string
@@ -58,6 +58,7 @@ const formState = reactive<FormState>({
 })
 
 const router = useRouter()
+const store = useStore()
 
 /**
  * 提交表单
@@ -67,7 +68,7 @@ const handleSubmit = async (values: any) => {
   const res = await userLogin(values)
   // 登录成功，把登录态保存到全局状态中
   if (res.data.code === 0 && res.data.data) {
-    await fetchLoginUser()
+    store.dispatch('user/setLoginUser')
     message.success('登录成功')
     router.push({
       path: '/',
