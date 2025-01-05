@@ -25,10 +25,8 @@ service.interceptors.response.use(
   (response) => {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    console.log(response)
 
     const { data } = response
-    console.log(data)
     // 未登录
     if (data.code === 40100) {
       // 不是获取用户信息接口，或者不是登录页面，则跳转到登录页面
