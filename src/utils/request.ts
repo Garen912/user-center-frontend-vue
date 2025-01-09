@@ -6,6 +6,8 @@ const service = axios.create({
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:8080'
       : 'https://codefather.cn',
+  // 本地代理请求设置
+  // baseURL: '',
   timeout: 5000,
   withCredentials: true,
 })
